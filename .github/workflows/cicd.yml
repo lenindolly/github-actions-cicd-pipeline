@@ -41,8 +41,8 @@ jobs:
     - name: install gitleaks
       run: sudo apt install gitleaks -y
       
-    - name: scan the filesystem using trivy
-      run: gitleaks detect source . -r gitleaks-report.json -f json
+    - name: scan the filesystem using gitleaks
+      run: gitleaks dir -r gitleaks-report.json -f json
       
 
     
