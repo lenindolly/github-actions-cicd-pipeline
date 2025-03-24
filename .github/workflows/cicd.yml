@@ -1,0 +1,26 @@
+#  AUTHOR  :  lenindevops
+#  project :  github-actions-cicd-pipeline
+
+name: github actions cicd pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  
+jobs:
+  compile:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: maven
+    - name: compile the source code with maven
+      run: mvn compile
+
+    
