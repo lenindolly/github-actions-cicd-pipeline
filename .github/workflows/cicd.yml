@@ -37,5 +37,12 @@ jobs:
       
     - name: scan the filesystem using trivy
       run: trivy fs --format table -o fs-roport.json .
+      
+    - name: install gitleaks
+      run: sudo apt install gitleaks -y
+      
+    - name: scan the filesystem using trivy
+      run: gitleaks detect source . -r gitleaks-report.json -f json
+      
 
     
