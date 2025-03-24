@@ -42,7 +42,7 @@ jobs:
       run: sudo apt install gitleaks -y
       
     - name: scan the filesystem using gitleaks
-      run: gitleaks dir -r gitleaks-report.json -f json
+      run: gitleaks dir --source . -r gitleaks-report.json -f json
       
 
     
